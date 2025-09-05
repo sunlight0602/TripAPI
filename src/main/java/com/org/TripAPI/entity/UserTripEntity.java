@@ -13,15 +13,15 @@ public class UserTripEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    int score;
-
     @Column(length = 100)
     String comment;
 
-    @OneToMany
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
     private UserEntity user;
 
-    @OneToMany
+    @ManyToOne
+    @JoinColumn(name = "trip_id", nullable = false)
     private TripEntity trip;
 
     @OneToMany(mappedBy = "userTrip", cascade = CascadeType.ALL, orphanRemoval = true)

@@ -9,7 +9,7 @@ public class PhotoEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String url; // 照片的路徑或存檔位置
+    private String url;
 
     @ManyToOne
     @JoinColumn(name = "user_trip_id", nullable = false)

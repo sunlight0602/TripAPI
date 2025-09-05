@@ -3,6 +3,7 @@ package com.org.TripAPI.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.OffsetDateTime;
 import java.util.List;
 
 @Data
@@ -14,8 +15,8 @@ public class TripEntity {
     private Long id;
 
     private String destination;
-    private String startDate;
-    private String endDate;
+    private OffsetDateTime startDate;
+    private OffsetDateTime endDate;
 
     @OneToMany
     List<SiteEntity> sites;

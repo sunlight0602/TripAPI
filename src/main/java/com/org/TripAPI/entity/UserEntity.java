@@ -13,8 +13,11 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "user_name")
-    private String username;
+    @Column(length = 20)
+    private String account;
+
+    @Column(name = "display_name", length = 20)
+    private String displayName;
 
     private String email;
 
